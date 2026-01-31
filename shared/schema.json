@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "past_life": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "era": { "type": "string" },
+        "region": { "type": "string" },
+        "role": { "type": "string" },
+        "daily_details": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": { "type": "string" }
+        },
+        "key_event": { "type": "string" }
+      },
+      "required": ["era", "region", "role", "daily_details", "key_event"]
+    },
+    "carryover_traits": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 5,
+      "items": { "type": "string" }
+    },
+    "shadow": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2,
+      "items": { "type": "string" }
+    },
+    "advice": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "string" }
+    },
+    "catchphrase": { "type": "string" },
+    "aura": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "colors": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": { "type": "string" }
+        },
+        "mood": {
+          "type": "string"
+        },
+        "image_prompt": { "type": "string" }
+      },
+      "required": ["colors", "mood", "image_prompt"]
+    }
+  },
+  "required": [
+    "past_life",
+    "carryover_traits",
+    "shadow",
+    "advice",
+    "catchphrase",
+    "aura"
+  ]
+}
