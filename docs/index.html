@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>前世診断（AI生成）＋オーラ画像生成</title>
+    <title>前世診断｜世界史×生活描写</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="bg-orb"></div>
     <header class="site-header">
-      <h1>前世診断（AI生成）＋オーラ画像生成</h1>
+      <h1>前世診断｜世界史×生活描写</h1>
       <p>
-        世界史を織り交ぜたリアルな生活描写から、あなたの前世を読み解きます。オーラは曼荼羅の幾何学として描きます。
+        世界史を織り交ぜた生活描写から、あなたの前世を読み解きます。
       </p>
     </header>
 
@@ -19,7 +19,8 @@
       <section id="intro" class="panel active">
         <h2>はじめに</h2>
         <p>
-          生年月日と8つの質問に答えると、前世の生活描写とオーラを生成します。結果は匿名IDで保存され、URLから再表示できます。
+          生年月日と8つの質問に答えると、あなたの前世の生活や役割を診断します。
+          結果は匿名IDで保存され、同じ端末・URLから再表示できます。
         </p>
         <button class="primary" id="startButton">診断を始める</button>
       </section>
@@ -53,13 +54,13 @@
           <button class="primary" id="nextButton">次へ</button>
         </div>
         <p id="questionError" class="error"></p>
-        <p class="hint">戻るは任意です。入力内容は保存されません。</p>
+        <p class="hint">入力内容は端末内でのみ使用されます。</p>
       </section>
 
       <section id="loading" class="panel">
         <div class="loader"></div>
-        <h2>前世の糸を読み取っています…</h2>
-        <p>混雑時は数十秒かかる場合があります。表示が止まったら数分空けて再試行してください。</p>
+        <h2>前世の記憶を辿っています…</h2>
+        <p>少し時間がかかる場合があります。</p>
       </section>
 
       <section id="result" class="panel">
@@ -95,7 +96,9 @@
             </section>
             <blockquote id="catchphrase"></blockquote>
           </div>
-          <div class="result-visual">
+
+          <!-- Phase1: hidden -->
+          <div class="result-visual is-disabled">
             <div class="aura-frame">
               <img id="auraImage" alt="オーラ画像" />
             </div>
@@ -105,6 +108,9 @@
             </div>
           </div>
         </div>
+
+        <p class="hint">※オーラ表現・ビジュアル要素は今後追加予定です。</p>
+
         <div class="actions">
           <button class="ghost" id="copyButton">コピー</button>
           <a id="shareButton" class="ghost" target="_blank" rel="noopener noreferrer">Xでシェア</a>
@@ -115,7 +121,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>生成結果は匿名IDで保存されます。個人情報は保存しません。</p>
+      <p>結果は端末内にのみ保存されます。個人情報は送信されません。</p>
     </footer>
 
     <script src="app.js"></script>
